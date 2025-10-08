@@ -48,6 +48,7 @@ export interface SectionsIncludedSection extends Struct.ComponentSchema {
   };
   attributes: {
     Description: Schema.Attribute.Text;
+    IncludedBoxes: Schema.Attribute.Component<'shared.included-box', true>;
     Title: Schema.Attribute.String;
   };
 }
@@ -78,6 +79,19 @@ export interface SharedCustomersBlock extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     Description: Schema.Attribute.Text;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedIncludedBox extends Struct.ComponentSchema {
+  collectionName: 'components_shared_included_boxes';
+  info: {
+    displayName: 'IncludedBox';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Number: Schema.Attribute.String;
     Title: Schema.Attribute.String;
   };
 }
@@ -164,6 +178,7 @@ declare module '@strapi/strapi' {
       'sections.included-section': SectionsIncludedSection;
       'shared.button': SharedButton;
       'shared.customers-block': SharedCustomersBlock;
+      'shared.included-box': SharedIncludedBox;
       'shared.media': SharedMedia;
       'shared.medium-button': SharedMediumButton;
       'shared.quote': SharedQuote;

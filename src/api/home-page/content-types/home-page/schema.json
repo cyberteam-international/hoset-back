@@ -21,7 +21,8 @@
       "components": [
         "sections.hero-section",
         "sections.about-section",
-        "sections.customers-section"
+        "sections.customers-section",
+        "sections.included-section"
       ]
     }
   }

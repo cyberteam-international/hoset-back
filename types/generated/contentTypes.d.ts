@@ -592,6 +592,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'sections.hero-section',
         'sections.about-section',
         'sections.customers-section',
+        'sections.included-section',
       ]
     >;
     SEO: Schema.Attribute.Component<'shared.seo', false>;

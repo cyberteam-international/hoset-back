@@ -7,20 +7,25 @@ import { factories } from '@strapi/strapi'
 export default factories.createCoreController('api::home-page.home-page', ({ strapi }) => ({
   async findFull(ctx) {
     try {
-      // Используем плагин populate-deep для автоматического populate всего
-      const populateDeepPlugin = strapi.plugin('populate-deep');
+      // Попробуем использовать более универсальный подход
+      let entity;
       
-      if (populateDeepPlugin) {
-        // Если плагин доступен, используем его
-        const entity = await strapi.entityService.findMany('api::home-page.home-page', {
-          populate: populateDeepPlugin.service('populate-deep').buildPopulateDeep('api::home-page.home-page')
+      try {
+        // Сначала пробуем с плагином populate-deep
+        entity = await strapi.db.query('api::home-page.home-page').findOne({
+          populate: {
+            SEO: {
+              populate: '*'
+            },
+            Sections: {
+              populate: '*'
+            }
+          }
         });
-        
-        const data = Array.isArray(entity) ? entity[0] : entity;
-        return { data, meta: {} };
-      } else {
-        // Fallback: используем максимально глубокий populate вручную
-        const entity = await strapi.db.query('api::home-page.home-page').findOne({
+      } catch (error) {
+        console.log('Trying with manual populate...');
+        // Fallback: используем детальный populate вручную
+        entity = await strapi.db.query('api::home-page.home-page').findOne({
           populate: {
             SEO: {
               populate: {
@@ -30,22 +35,31 @@ export default factories.createCoreController('api::home-page.home-page', ({ str
             },
             Sections: {
               populate: {
+                // Hero Section
                 Image: true,
                 Button: true,
+                // About Section - Image уже включен выше
+                // Customers Section
                 CustomersBlocks: {
                   populate: {
                     CustomersBlockIconUp: true,
                     CustomersBlockIconCenter: true,
                     CustomersBlockIconDown: true
                   }
+                },
+                // Included Section
+                IncludedBoxes: {
+                  populate: {
+                    Image: true
+                  }
                 }
               }
             }
           }
         });
-
-        return { data: entity, meta: {} };
       }
+
+      return { data: entity, meta: {} };
     } catch (error) {
       console.error('Error in findFull:', error);
       ctx.throw(500, 'Internal Server Error');
