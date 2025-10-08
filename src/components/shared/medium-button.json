@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_medium_buttons",
+  "info": {
+    "displayName": "MediumButton"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

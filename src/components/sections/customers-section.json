@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_sections_customers_sections",
+  "info": {
+    "displayName": "CustomersSection"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "CustomersBlocks": {
+      "type": "component",
+      "component": "shared.customers-block",
+      "repeatable": true
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

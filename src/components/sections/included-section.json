@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_included_sections",
+  "info": {
+    "displayName": "IncludedSection"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
