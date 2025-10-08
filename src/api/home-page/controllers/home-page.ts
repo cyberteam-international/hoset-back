@@ -52,7 +52,10 @@ export default factories.createCoreController('api::home-page.home-page', ({ str
                   populate: {
                     Image: true
                   }
-                }
+                },
+                // Video Section
+                Video: true,
+                MobileVideo: true
               }
             }
           }

@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_sections_video_sections",
+  "info": {
+    "displayName": "VideoSection"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "TopLeftText": {
+      "type": "string"
+    },
+    "Button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": true
+    },
+    "Video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "MobileVideo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

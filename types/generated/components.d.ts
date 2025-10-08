@@ -53,6 +53,23 @@ export interface SectionsIncludedSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsVideoSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_video_sections';
+  info: {
+    displayName: 'VideoSection';
+  };
+  attributes: {
+    Button: Schema.Attribute.Component<'shared.button', true>;
+    Description: Schema.Attribute.Text;
+    MobileVideo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    Title: Schema.Attribute.String;
+    TopLeftText: Schema.Attribute.String;
+    Video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface SharedButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_buttons';
   info: {
@@ -176,6 +193,7 @@ declare module '@strapi/strapi' {
       'sections.customers-section': SectionsCustomersSection;
       'sections.hero-section': SectionsHeroSection;
       'sections.included-section': SectionsIncludedSection;
+      'sections.video-section': SectionsVideoSection;
       'shared.button': SharedButton;
       'shared.customers-block': SharedCustomersBlock;
       'shared.included-box': SharedIncludedBox;
