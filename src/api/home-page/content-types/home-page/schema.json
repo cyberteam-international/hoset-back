@@ -23,7 +23,9 @@
         "sections.about-section",
         "sections.customers-section",
         "sections.included-section",
-        "sections.video-section"
+        "sections.video-section",
+        "sections.big-gallary-section",
+        "sections.advantages-section"
       ]
     }
   }

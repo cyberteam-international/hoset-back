@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_advantages_boxes",
+  "info": {
+    "displayName": "AdvantagesBox"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Number": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

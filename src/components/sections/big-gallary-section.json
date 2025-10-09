@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_big_gallary_sections",
+  "info": {
+    "displayName": "BigGallarySection"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Gallary": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

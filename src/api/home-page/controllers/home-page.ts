@@ -55,7 +55,9 @@ export default factories.createCoreController('api::home-page.home-page', ({ str
                 },
                 // Video Section
                 Video: true,
-                MobileVideo: true
+                MobileVideo: true,
+                // Big Gallery Section
+                Gallary: true
               }
             }
           }

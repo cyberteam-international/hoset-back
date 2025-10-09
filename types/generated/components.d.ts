@@ -13,6 +13,31 @@ export interface SectionsAboutSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsAdvantagesSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_advantages_sections';
+  info: {
+    displayName: 'AdvantagesSection';
+  };
+  attributes: {
+    AdvantagesBoxes: Schema.Attribute.Component<'shared.advantages-box', true>;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsBigGallarySection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_big_gallary_sections';
+  info: {
+    displayName: 'BigGallarySection';
+  };
+  attributes: {
+    Gallary: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsCustomersSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_customers_sections';
   info: {
@@ -67,6 +92,18 @@ export interface SectionsVideoSection extends Struct.ComponentSchema {
     Title: Schema.Attribute.String;
     TopLeftText: Schema.Attribute.String;
     Video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface SharedAdvantagesBox extends Struct.ComponentSchema {
+  collectionName: 'components_shared_advantages_boxes';
+  info: {
+    displayName: 'AdvantagesBox';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text;
+    Number: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -190,10 +227,13 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'sections.about-section': SectionsAboutSection;
+      'sections.advantages-section': SectionsAdvantagesSection;
+      'sections.big-gallary-section': SectionsBigGallarySection;
       'sections.customers-section': SectionsCustomersSection;
       'sections.hero-section': SectionsHeroSection;
       'sections.included-section': SectionsIncludedSection;
       'sections.video-section': SectionsVideoSection;
+      'shared.advantages-box': SharedAdvantagesBox;
       'shared.button': SharedButton;
       'shared.customers-block': SharedCustomersBlock;
       'shared.included-box': SharedIncludedBox;

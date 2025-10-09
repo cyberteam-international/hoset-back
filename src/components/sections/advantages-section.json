@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_advantages_sections",
+  "info": {
+    "displayName": "AdvantagesSection"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "AdvantagesBoxes": {
+      "type": "component",
+      "component": "shared.advantages-box",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
