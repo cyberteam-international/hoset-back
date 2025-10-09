@@ -38,6 +38,26 @@ export interface SectionsBigGallarySection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsCallToAction extends Struct.ComponentSchema {
+  collectionName: 'components_sections_call_to_actions';
+  info: {
+    displayName: 'CallToAction';
+  };
+  attributes: {
+    Button: Schema.Attribute.Component<'shared.button', false>;
+    CallToActionItems: Schema.Attribute.Component<
+      'shared.call-to-action-items',
+      true
+    >;
+    Description: Schema.Attribute.Text;
+    MobileVideo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    TopLeftText: Schema.Attribute.String;
+    Video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface SectionsCustomersSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_customers_sections';
   info: {
@@ -117,6 +137,17 @@ export interface SharedButton extends Struct.ComponentSchema {
     Text: Schema.Attribute.String & Schema.Attribute.Required;
     Variant: Schema.Attribute.Enumeration<['primary', 'secondary']> &
       Schema.Attribute.DefaultTo<'primary'>;
+  };
+}
+
+export interface SharedCallToActionItems extends Struct.ComponentSchema {
+  collectionName: 'components_shared_call_to_action_items';
+  info: {
+    displayName: 'CallToActionItems';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -229,12 +260,14 @@ declare module '@strapi/strapi' {
       'sections.about-section': SectionsAboutSection;
       'sections.advantages-section': SectionsAdvantagesSection;
       'sections.big-gallary-section': SectionsBigGallarySection;
+      'sections.call-to-action': SectionsCallToAction;
       'sections.customers-section': SectionsCustomersSection;
       'sections.hero-section': SectionsHeroSection;
       'sections.included-section': SectionsIncludedSection;
       'sections.video-section': SectionsVideoSection;
       'shared.advantages-box': SharedAdvantagesBox;
       'shared.button': SharedButton;
+      'shared.call-to-action-items': SharedCallToActionItems;
       'shared.customers-block': SharedCustomersBlock;
       'shared.included-box': SharedIncludedBox;
       'shared.media': SharedMedia;

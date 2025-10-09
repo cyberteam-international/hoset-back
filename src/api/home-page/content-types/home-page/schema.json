@@ -25,7 +25,8 @@
         "sections.included-section",
         "sections.video-section",
         "sections.big-gallary-section",
-        "sections.advantages-section"
+        "sections.advantages-section",
+        "sections.call-to-action"
       ]
     }
   }

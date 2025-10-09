@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_call_to_action_items",
+  "info": {
+    "displayName": "CallToActionItems"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
