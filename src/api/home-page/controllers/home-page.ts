@@ -57,7 +57,11 @@ export default factories.createCoreController('api::home-page.home-page', ({ str
                 Video: true,
                 MobileVideo: true,
                 // Big Gallery Section
-                Gallary: true
+                Gallary: true,
+                // Advantages Section
+                AdvantagesBoxes: {
+                  populate: true
+                }
               }
             }
           }
