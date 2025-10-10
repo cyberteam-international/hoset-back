@@ -28,7 +28,8 @@
         "sections.advantages-section",
         "sections.call-to-action",
         "sections.text-section",
-        "sections.gallary-section"
+        "sections.gallary-section",
+        "sections.advantages-section-v2"
       ]
     }
   }

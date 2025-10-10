@@ -566,6 +566,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'sections.call-to-action',
         'sections.text-section',
         'sections.gallary-section',
+        'sections.advantages-section-v2',
       ]
     >;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
@@ -606,6 +607,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'sections.about-section',
         'sections.text-section',
         'sections.gallary-section',
+        'sections.advantages-section-v2',
       ]
     >;
     SEO: Schema.Attribute.Component<'shared.seo', false>;

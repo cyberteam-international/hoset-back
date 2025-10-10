@@ -61,9 +61,11 @@ export default factories.createCoreController('api::page.page', ({ strapi }) => 
                 MobileVideo: true,
                 // Big Gallery Section
                 Gallary: true,
-                // Advantages Section
+                // Advantages Section (поддерживает обе версии)
                 AdvantagesBoxes: {
-                  populate: true
+                  populate: {
+                    Icon: true
+                  }
                 },
                 // Call To Action Section
                 CallToActionItems: {

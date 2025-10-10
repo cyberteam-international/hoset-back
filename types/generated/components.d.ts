@@ -24,6 +24,21 @@ export interface SectionsAdvantagesSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsAdvantagesSectionV2 extends Struct.ComponentSchema {
+  collectionName: 'components_sections_advantages_section_v2s';
+  info: {
+    displayName: 'AdvantagesSectionV2';
+  };
+  attributes: {
+    AdvantagesBoxes: Schema.Attribute.Component<
+      'shared.advantages-box-v2',
+      true
+    >;
+    Description: Schema.Attribute.Text;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsBigGallarySection extends Struct.ComponentSchema {
   collectionName: 'components_sections_big_gallary_sections';
   info: {
@@ -148,6 +163,18 @@ export interface SharedAdvantagesBox extends Struct.ComponentSchema {
   attributes: {
     Description: Schema.Attribute.Text;
     Number: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedAdvantagesBoxV2 extends Struct.ComponentSchema {
+  collectionName: 'components_shared_advantages_box_v2s';
+  info: {
+    displayName: 'AdvantagesBoxV2';
+  };
+  attributes: {
+    Description: Schema.Attribute.String;
+    Icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Title: Schema.Attribute.String;
   };
 }
@@ -297,6 +324,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'sections.about-section': SectionsAboutSection;
       'sections.advantages-section': SectionsAdvantagesSection;
+      'sections.advantages-section-v2': SectionsAdvantagesSectionV2;
       'sections.big-gallary-section': SectionsBigGallarySection;
       'sections.call-to-action': SectionsCallToAction;
       'sections.customers-section': SectionsCustomersSection;
@@ -306,6 +334,7 @@ declare module '@strapi/strapi' {
       'sections.text-section': SectionsTextSection;
       'sections.video-section': SectionsVideoSection;
       'shared.advantages-box': SharedAdvantagesBox;
+      'shared.advantages-box-v2': SharedAdvantagesBoxV2;
       'shared.button': SharedButton;
       'shared.call-to-action-items': SharedCallToActionItems;
       'shared.customers-block': SharedCustomersBlock;

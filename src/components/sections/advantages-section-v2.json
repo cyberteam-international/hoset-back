@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_advantages_section_v2s",
+  "info": {
+    "displayName": "AdvantagesSectionV2"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "AdvantagesBoxes": {
+      "type": "component",
+      "component": "shared.advantages-box-v2",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

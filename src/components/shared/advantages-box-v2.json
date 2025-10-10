@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_advantages_box_v2s",
+  "info": {
+    "displayName": "AdvantagesBoxV2"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}
