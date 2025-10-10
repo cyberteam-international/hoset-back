@@ -32,7 +32,9 @@
         "sections.call-to-action",
         "sections.big-gallary-section",
         "sections.advantages-section",
-        "sections.about-section"
+        "sections.about-section",
+        "sections.text-section",
+        "sections.gallary-section"
       ]
     },
     "SEO": {

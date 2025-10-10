@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_gallary_sections",
+  "info": {
+    "displayName": "GallarySection"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "GallaryItems": {
+      "type": "component",
+      "component": "shared.gallary-item-with-link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

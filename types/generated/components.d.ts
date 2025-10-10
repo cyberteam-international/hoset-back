@@ -71,6 +71,20 @@ export interface SectionsCustomersSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsGallarySection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_gallary_sections';
+  info: {
+    displayName: 'GallarySection';
+  };
+  attributes: {
+    GallaryItems: Schema.Attribute.Component<
+      'shared.gallary-item-with-link',
+      true
+    >;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_hero_sections';
   info: {
@@ -94,6 +108,17 @@ export interface SectionsIncludedSection extends Struct.ComponentSchema {
   attributes: {
     Description: Schema.Attribute.Text;
     IncludedBoxes: Schema.Attribute.Component<'shared.included-box', true>;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsTextSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_text_sections';
+  info: {
+    displayName: 'TextSection';
+  };
+  attributes: {
+    Content: Schema.Attribute.RichText;
     Title: Schema.Attribute.String;
   };
 }
@@ -164,6 +189,19 @@ export interface SharedCustomersBlock extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     Description: Schema.Attribute.Text;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedGallaryItemWithLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_gallary_item_with_links';
+  info: {
+    displayName: 'GallaryItemWithLink';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    LinkText: Schema.Attribute.String;
     Title: Schema.Attribute.String;
   };
 }
@@ -262,13 +300,16 @@ declare module '@strapi/strapi' {
       'sections.big-gallary-section': SectionsBigGallarySection;
       'sections.call-to-action': SectionsCallToAction;
       'sections.customers-section': SectionsCustomersSection;
+      'sections.gallary-section': SectionsGallarySection;
       'sections.hero-section': SectionsHeroSection;
       'sections.included-section': SectionsIncludedSection;
+      'sections.text-section': SectionsTextSection;
       'sections.video-section': SectionsVideoSection;
       'shared.advantages-box': SharedAdvantagesBox;
       'shared.button': SharedButton;
       'shared.call-to-action-items': SharedCallToActionItems;
       'shared.customers-block': SharedCustomersBlock;
+      'shared.gallary-item-with-link': SharedGallaryItemWithLink;
       'shared.included-box': SharedIncludedBox;
       'shared.media': SharedMedia;
       'shared.medium-button': SharedMediumButton;

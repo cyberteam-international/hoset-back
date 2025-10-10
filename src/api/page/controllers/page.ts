@@ -68,6 +68,12 @@ export default factories.createCoreController('api::page.page', ({ strapi }) => 
                 // Call To Action Section
                 CallToActionItems: {
                   populate: true
+                },
+                // Gallery Section
+                GallaryItems: {
+                  populate: {
+                    Image: true
+                  }
                 }
               }
             }

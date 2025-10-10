@@ -65,6 +65,12 @@ export default factories.createCoreController('api::home-page.home-page', ({ str
                 // Call To Action Section
                 CallToActionItems: {
                   populate: true
+                },
+                // Gallery Section
+                GallaryItems: {
+                  populate: {
+                    Image: true
+                  }
                 }
               }
             }
