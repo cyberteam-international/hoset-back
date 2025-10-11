@@ -25,6 +25,11 @@ export default factories.createCoreController('api::page.page', ({ strapi }) => 
             }
           }
         });
+        
+        // Проверяем, получили ли мы полные данные для ContentSection
+        if (!entity || !entity.Sections || entity.Sections.some(section => !section.Rows && section.__component === 'sections.content-section')) {
+          throw new Error('Incomplete populate, trying manual approach');
+        }
       } catch (error) {
         console.log('Trying with manual populate...');
         // Fallback: используем детальный populate вручную
@@ -75,6 +80,13 @@ export default factories.createCoreController('api::page.page', ({ strapi }) => 
                 GallaryItems: {
                   populate: {
                     Image: true
+                  }
+                },
+                // Content Section
+                Rows: {
+                  populate: {
+                    Image: true,
+                    Image2: true
                   }
                 }
               }
