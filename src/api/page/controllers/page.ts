@@ -10,90 +10,67 @@ export default factories.createCoreController('api::page.page', ({ strapi }) => 
     if (ctx.query.slug) {
       const slug = ctx.query.slug;
       
-      let entity;
-      
-      try {
-        // Сначала пробуем с универсальным populate
-        entity = await strapi.db.query('api::page.page').findOne({
-          where: { slug },
-          populate: {
-            SEO: {
-              populate: '*'
-            },
-            Sections: {
-              populate: '*'
+      // Используем детальный populate для полного контроля
+      const entity = await strapi.db.query('api::page.page').findOne({
+        where: { slug },
+        populate: {
+          SEO: {
+            populate: {
+              MetaImage: true,
+              Keywords: true
             }
-          }
-        });
-        
-        // Проверяем, получили ли мы полные данные для ContentSection
-        if (!entity || !entity.Sections || entity.Sections.some(section => !section.Rows && section.__component === 'sections.content-section')) {
-          throw new Error('Incomplete populate, trying manual approach');
-        }
-      } catch (error) {
-        console.log('Trying with manual populate...');
-        // Fallback: используем детальный populate вручную
-        entity = await strapi.db.query('api::page.page').findOne({
-          where: { slug },
-          populate: {
-            SEO: {
-              populate: {
-                MetaImage: true,
-                Keywords: true
-              }
-            },
-            Sections: {
-              populate: {
-                // Hero Section
-                Image: true,
-                Button: true,
-                // Customers Section
-                CustomersBlocks: {
-                  populate: {
-                    CustomersBlockIconUp: true,
-                    CustomersBlockIconCenter: true,
-                    CustomersBlockIconDown: true
-                  }
-                },
-                // Included Section
-                IncludedBoxes: {
-                  populate: {
-                    Image: true
-                  }
-                },
-                // Video Section
-                Video: true,
-                MobileVideo: true,
-                // Big Gallery Section
-                Gallary: true,
-                // Advantages Section (поддерживает обе версии)
-                AdvantagesBoxes: {
-                  populate: {
-                    Icon: true
-                  }
-                },
-                // Call To Action Section
-                CallToActionItems: {
-                  populate: true
-                },
-                // Gallery Section
-                GallaryItems: {
-                  populate: {
-                    Image: true
-                  }
-                },
-                // Content Section
-                Rows: {
-                  populate: {
-                    Image: true,
-                    Image2: true
-                  }
+          },
+          Sections: {
+            populate: {
+              // Hero Section
+              Image: true,
+              Button: true,
+              // Customers Section
+              CustomersBlocks: {
+                populate: {
+                  CustomersBlockIconUp: true,
+                  CustomersBlockIconCenter: true,
+                  CustomersBlockIconDown: true
+                }
+              },
+              // Included Section
+              IncludedBoxes: {
+                populate: {
+                  Image: true
+                }
+              },
+              // Video Section
+              Video: true,
+              MobileVideo: true,
+              // Big Gallery Section
+              Gallary: true,
+              // Advantages Section (поддерживает обе версии)
+              AdvantagesBoxes: {
+                populate: {
+                  Icon: true
+                }
+              },
+              // Call To Action Section
+              CallToActionItems: {
+                populate: true
+              },
+              // Gallery Section
+              GallaryItems: {
+                populate: {
+                  Image: true
+                }
+              },
+              // Content Section
+              Rows: {
+                populate: {
+                  Image: true,
+                  Image2: true
                 }
               }
             }
           }
-        });
-      }
+        }
+      });
 
       if (!entity) {
         return ctx.notFound('Page not found');
