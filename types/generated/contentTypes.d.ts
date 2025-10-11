@@ -567,6 +567,8 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'sections.text-section',
         'sections.gallary-section',
         'sections.advantages-section-v2',
+        'sections.call-to-action-v2',
+        'sections.content-section',
       ]
     >;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
@@ -608,6 +610,8 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'sections.text-section',
         'sections.gallary-section',
         'sections.advantages-section-v2',
+        'sections.call-to-action-v2',
+        'sections.content-section',
       ]
     >;
     SEO: Schema.Attribute.Component<'shared.seo', false>;

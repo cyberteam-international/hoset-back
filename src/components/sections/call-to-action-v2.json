@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_sections_call_to_action_v2s",
+  "info": {
+    "displayName": "CallToActionV2"
+  },
+  "options": {},
+  "attributes": {
+    "TopLeftText": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "CallToActionItems": {
+      "type": "component",
+      "component": "shared.call-to-action-items",
+      "repeatable": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    },
+    "Video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "MobileVideo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

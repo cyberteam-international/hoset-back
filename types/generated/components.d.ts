@@ -73,6 +73,37 @@ export interface SectionsCallToAction extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsCallToActionV2 extends Struct.ComponentSchema {
+  collectionName: 'components_sections_call_to_action_v2s';
+  info: {
+    displayName: 'CallToActionV2';
+  };
+  attributes: {
+    Button: Schema.Attribute.Component<'shared.button', false>;
+    CallToActionItems: Schema.Attribute.Component<
+      'shared.call-to-action-items',
+      true
+    >;
+    Description: Schema.Attribute.Text;
+    MobileVideo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    Title: Schema.Attribute.String;
+    TopLeftText: Schema.Attribute.String;
+    Video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface SectionsContentSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_content_sections';
+  info: {
+    displayName: 'ContentSection';
+  };
+  attributes: {
+    Rows: Schema.Attribute.Component<'shared.content-raw', true>;
+  };
+}
+
 export interface SectionsCustomersSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_customers_sections';
   info: {
@@ -203,6 +234,20 @@ export interface SharedCallToActionItems extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedContentRaw extends Struct.ComponentSchema {
+  collectionName: 'components_shared_content_raws';
+  info: {
+    displayName: 'ContentRaw';
+  };
+  attributes: {
+    addSecondPicture: Schema.Attribute.Boolean;
+    Description: Schema.Attribute.Text;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Image2: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedCustomersBlock extends Struct.ComponentSchema {
   collectionName: 'components_shared_customers_blocks';
   info: {
@@ -327,6 +372,8 @@ declare module '@strapi/strapi' {
       'sections.advantages-section-v2': SectionsAdvantagesSectionV2;
       'sections.big-gallary-section': SectionsBigGallarySection;
       'sections.call-to-action': SectionsCallToAction;
+      'sections.call-to-action-v2': SectionsCallToActionV2;
+      'sections.content-section': SectionsContentSection;
       'sections.customers-section': SectionsCustomersSection;
       'sections.gallary-section': SectionsGallarySection;
       'sections.hero-section': SectionsHeroSection;
@@ -337,6 +384,7 @@ declare module '@strapi/strapi' {
       'shared.advantages-box-v2': SharedAdvantagesBoxV2;
       'shared.button': SharedButton;
       'shared.call-to-action-items': SharedCallToActionItems;
+      'shared.content-raw': SharedContentRaw;
       'shared.customers-block': SharedCustomersBlock;
       'shared.gallary-item-with-link': SharedGallaryItemWithLink;
       'shared.included-box': SharedIncludedBox;

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_content_sections",
+  "info": {
+    "displayName": "ContentSection"
+  },
+  "options": {},
+  "attributes": {
+    "Rows": {
+      "type": "component",
+      "component": "shared.content-raw",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

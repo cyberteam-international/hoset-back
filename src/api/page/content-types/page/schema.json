@@ -35,7 +35,9 @@
         "sections.about-section",
         "sections.text-section",
         "sections.gallary-section",
-        "sections.advantages-section-v2"
+        "sections.advantages-section-v2",
+        "sections.call-to-action-v2",
+        "sections.content-section"
       ]
     },
     "SEO": {
