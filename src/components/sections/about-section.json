@@ -8,7 +8,7 @@
     "Description": {
       "type": "text"
     },
-    "Image": {
+    "Media": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -25,6 +25,10 @@
     },
     "Title": {
       "type": "richtext"
+    },
+    "lightVersion": {
+      "type": "boolean",
+      "default": false
     }
   },
   "config": {}

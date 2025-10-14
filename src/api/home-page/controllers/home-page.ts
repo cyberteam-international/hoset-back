@@ -21,7 +21,8 @@ export default factories.createCoreController('api::home-page.home-page', ({ str
               // Hero Section
               Image: true,
               Button: true,
-              // About Section - Image уже включен выше
+              // About Section - поддержка универсального поля Media для изображений и видео
+              Media: true,
               // Customers Section
               CustomersBlocks: {
                 populate: {

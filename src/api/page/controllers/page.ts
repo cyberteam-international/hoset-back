@@ -25,6 +25,8 @@ export default factories.createCoreController('api::page.page', ({ strapi }) => 
               // Hero Section
               Image: true,
               Button: true,
+              // About Section - поддержка универсального поля Media для изображений и видео
+              Media: true,
               // Customers Section
               CustomersBlocks: {
                 populate: {

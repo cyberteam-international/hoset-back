@@ -553,24 +553,8 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'api::home-page.home-page'
     > &
       Schema.Attribute.Private;
+    pages: Schema.Attribute.Relation<'oneToMany', 'api::page.page'>;
     publishedAt: Schema.Attribute.DateTime;
-    Sections: Schema.Attribute.DynamicZone<
-      [
-        'sections.hero-section',
-        'sections.about-section',
-        'sections.customers-section',
-        'sections.included-section',
-        'sections.video-section',
-        'sections.big-gallary-section',
-        'sections.advantages-section',
-        'sections.call-to-action',
-        'sections.text-section',
-        'sections.gallary-section',
-        'sections.advantages-section-v2',
-        'sections.call-to-action-v2',
-        'sections.content-section',
-      ]
-    >;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

@@ -8,7 +8,8 @@ export interface SectionsAboutSection extends Struct.ComponentSchema {
   attributes: {
     Button: Schema.Attribute.Component<'shared.button', false>;
     Description: Schema.Attribute.Text;
-    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    lightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Title: Schema.Attribute.RichText;
   };
 }
