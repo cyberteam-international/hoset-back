@@ -22,6 +22,16 @@
     "ColorCode": {
       "type": "string"
     },
+    "HomePageMediaPreview": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
     "Sections": {
       "type": "dynamiczone",
       "components": [
