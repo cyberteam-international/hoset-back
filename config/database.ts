@@ -1,7 +1,8 @@
 import path from 'path';
 
 export default ({ env }) => {
-  const client = env('DATABASE_CLIENT', 'sqlite');
+  // Принудительно используем SQLite, игнорируя переменную окружения от Strapi Cloud
+  const client = 'sqlite';
 
   const connections = {
     mysql: {
