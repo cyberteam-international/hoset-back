@@ -27,6 +27,7 @@ export default factories.createCoreController('api::page.page', ({ strapi }) => 
               Button: true,
               // About Section - поддержка универсального поля Media для изображений и видео
               Media: true,
+              Description: true,
               // Customers Section
               CustomersBlocks: {
                 populate: {
@@ -36,9 +37,11 @@ export default factories.createCoreController('api::page.page', ({ strapi }) => 
                 }
               },
               // Included Section
+              LightVersion: true,
               IncludedBoxes: {
                 populate: {
-                  Image: true
+                  Image: true,
+                  Button: true
                 }
               },
               // Video Section
@@ -59,7 +62,9 @@ export default factories.createCoreController('api::page.page', ({ strapi }) => 
               // Gallery Section
               GallaryItems: {
                 populate: {
-                  Image: true
+                  Image: true,
+                  Media: true,
+                  Button: true
                 }
               },
               // Content Section

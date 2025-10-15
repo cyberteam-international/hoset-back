@@ -599,6 +599,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'sections.advantages-section-v2',
         'sections.call-to-action-v2',
         'sections.content-section',
+        'sections.gallary-with-buttons',
       ]
     >;
     SEO: Schema.Attribute.Component<'shared.seo', false>;

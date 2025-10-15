@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_gallary_with_buttons",
+  "info": {
+    "displayName": "GallaryWithButtons"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "GallaryItems": {
+      "type": "component",
+      "component": "shared.slide-with-buttons",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

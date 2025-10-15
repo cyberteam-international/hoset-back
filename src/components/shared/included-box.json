@@ -23,6 +23,11 @@
         "videos",
         "audios"
       ]
+    },
+    "Button": {
+      "type": "component",
+      "component": "shared.medium-button",
+      "repeatable": false
     }
   },
   "config": {}

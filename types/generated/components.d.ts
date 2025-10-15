@@ -114,6 +114,7 @@ export interface SectionsCustomersSection extends Struct.ComponentSchema {
     CustomersBlocks: Schema.Attribute.Component<'shared.customers-block', true>;
     Description: Schema.Attribute.Text;
     Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    LightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     Title: Schema.Attribute.String;
   };
 }
@@ -132,6 +133,17 @@ export interface SectionsGallarySection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsGallaryWithButtons extends Struct.ComponentSchema {
+  collectionName: 'components_sections_gallary_with_buttons';
+  info: {
+    displayName: 'GallaryWithButtons';
+  };
+  attributes: {
+    GallaryItems: Schema.Attribute.Component<'shared.slide-with-buttons', true>;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_hero_sections';
   info: {
@@ -139,10 +151,8 @@ export interface SectionsHeroSection extends Struct.ComponentSchema {
   };
   attributes: {
     Button: Schema.Attribute.Component<'shared.button', true>;
-    Image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    Description: Schema.Attribute.Text;
+    Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -155,6 +165,7 @@ export interface SectionsIncludedSection extends Struct.ComponentSchema {
   attributes: {
     Description: Schema.Attribute.Text;
     IncludedBoxes: Schema.Attribute.Component<'shared.included-box', true>;
+    lightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     Title: Schema.Attribute.String;
   };
 }
@@ -285,6 +296,7 @@ export interface SharedIncludedBox extends Struct.ComponentSchema {
     displayName: 'IncludedBox';
   };
   attributes: {
+    Button: Schema.Attribute.Component<'shared.medium-button', false>;
     Description: Schema.Attribute.Text;
     Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Number: Schema.Attribute.String;
@@ -353,6 +365,18 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSlideWithButtons extends Struct.ComponentSchema {
+  collectionName: 'components_shared_slide_with_buttons';
+  info: {
+    displayName: 'SlideWithButtons';
+  };
+  attributes: {
+    Button: Schema.Attribute.Component<'shared.button', true>;
+    Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
@@ -377,6 +401,7 @@ declare module '@strapi/strapi' {
       'sections.content-section': SectionsContentSection;
       'sections.customers-section': SectionsCustomersSection;
       'sections.gallary-section': SectionsGallarySection;
+      'sections.gallary-with-buttons': SectionsGallaryWithButtons;
       'sections.hero-section': SectionsHeroSection;
       'sections.included-section': SectionsIncludedSection;
       'sections.text-section': SectionsTextSection;
@@ -394,6 +419,7 @@ declare module '@strapi/strapi' {
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
+      'shared.slide-with-buttons': SharedSlideWithButtons;
       'shared.slider': SharedSlider;
     }
   }

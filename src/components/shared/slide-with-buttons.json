@@ -1,16 +1,12 @@
 {
-  "collectionName": "components_sections_hero_sections",
+  "collectionName": "components_shared_slide_with_buttons",
   "info": {
-    "displayName": "HeroSection"
+    "displayName": "SlideWithButtons"
   },
   "options": {},
   "attributes": {
     "Title": {
-      "type": "string",
-      "required": true
-    },
-    "Description": {
-      "type": "text"
+      "type": "string"
     },
     "Button": {
       "type": "component",
