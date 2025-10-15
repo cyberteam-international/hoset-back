@@ -37,7 +37,7 @@ export default factories.createCoreController('api::page.page', ({ strapi }) => 
                 }
               },
               // Included Section
-              LightVersion: true,
+              lightVersion: true,
               IncludedBoxes: {
                 populate: {
                   Image: true,
