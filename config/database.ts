@@ -1,7 +1,7 @@
 import path from 'path';
 
 export default ({ env }) => {
-  // Принудительно используем SQLite, игнорируя переменную окружения от Strapi Cloud
+  // Принудительно используем SQLite, полностью игнорируя все переменные окружения
   const client = 'sqlite';
 
   const connections = {
@@ -53,9 +53,9 @@ export default ({ env }) => {
 
   return {
     connection: {
-      client,
-      ...connections[client],
-      acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
+      client: 'sqlite', // Принудительно устанавливаем SQLite
+      ...connections['sqlite'], // Принудительно используем SQLite конфигурацию
+      acquireConnectionTimeout: 60000, // Фиксированное значение
     },
   };
 };
