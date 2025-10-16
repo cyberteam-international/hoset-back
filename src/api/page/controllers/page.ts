@@ -74,6 +74,21 @@ export default factories.createCoreController('api::page.page', ({ strapi }) => 
                   Image: true,
                   Image2: true
                 }
+              },
+              // Projects List Section
+              Projects: {
+                populate: {
+                  category_of_projects: {
+                    fields: ['Name', 'slug']
+                  },
+                  MediaPreview: true,
+                  SEO: {
+                    populate: {
+                      MetaImage: true,
+                      Keywords: true
+                    }
+                  }
+                }
               }
             }
           }

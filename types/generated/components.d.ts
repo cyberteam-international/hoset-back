@@ -114,7 +114,7 @@ export interface SectionsCustomersSection extends Struct.ComponentSchema {
     CustomersBlocks: Schema.Attribute.Component<'shared.customers-block', true>;
     Description: Schema.Attribute.Text;
     Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    LightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    lightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     Title: Schema.Attribute.String;
   };
 }
@@ -166,6 +166,17 @@ export interface SectionsIncludedSection extends Struct.ComponentSchema {
     Description: Schema.Attribute.Text;
     IncludedBoxes: Schema.Attribute.Component<'shared.included-box', true>;
     lightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsProjectsListSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_projects_list_sections';
+  info: {
+    displayName: 'ProjectsListSection';
+  };
+  attributes: {
+    Projects: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
     Title: Schema.Attribute.String;
   };
 }
@@ -404,6 +415,7 @@ declare module '@strapi/strapi' {
       'sections.gallary-with-buttons': SectionsGallaryWithButtons;
       'sections.hero-section': SectionsHeroSection;
       'sections.included-section': SectionsIncludedSection;
+      'sections.projects-list-section': SectionsProjectsListSection;
       'sections.text-section': SectionsTextSection;
       'sections.video-section': SectionsVideoSection;
       'shared.advantages-box': SharedAdvantagesBox;

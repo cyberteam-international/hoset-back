@@ -560,10 +560,11 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'sections.call-to-action-v2',
         'sections.content-section',
         'sections.gallary-with-buttons',
+        'sections.projects-list-section',
       ]
     >;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
-    slug: Schema.Attribute.UID & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'Title'> & Schema.Attribute.Required;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

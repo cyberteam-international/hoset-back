@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_projects_list_sections",
+  "info": {
+    "displayName": "ProjectsListSection"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project"
+    }
+  },
+  "config": {}
+}

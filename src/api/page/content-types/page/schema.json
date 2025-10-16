@@ -17,6 +17,7 @@
     },
     "slug": {
       "type": "uid",
+      "targetField": "Title",
       "required": true
     },
     "ColorCode": {
@@ -48,7 +49,8 @@
         "sections.advantages-section-v2",
         "sections.call-to-action-v2",
         "sections.content-section",
-        "sections.gallary-with-buttons"
+        "sections.gallary-with-buttons",
+        "sections.projects-list-section"
       ]
     },
     "SEO": {
