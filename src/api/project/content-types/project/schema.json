@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "ColorCode": {
+      "type": "string"
+    },
+    "category_of_projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category-of-project.category-of-project",
+      "mappedBy": "projects"
+    },
+    "MediaPreview": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Sections": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.video-section",
+        "sections.text-section",
+        "sections.included-section",
+        "sections.hero-section",
+        "sections.gallary-with-buttons",
+        "sections.gallary-section",
+        "sections.customers-section",
+        "sections.content-section",
+        "sections.call-to-action",
+        "sections.call-to-action-v2",
+        "sections.big-gallary-section",
+        "sections.advantages-section",
+        "sections.advantages-section-v2",
+        "sections.about-section"
+      ]
+    },
+    "SEO": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}
