@@ -17,6 +17,10 @@
         "videos",
         "audios"
       ]
+    },
+    "lightVersion": {
+      "type": "boolean",
+      "default": false
     }
   },
   "config": {}

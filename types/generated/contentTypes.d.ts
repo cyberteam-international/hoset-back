@@ -561,6 +561,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'sections.content-section',
         'sections.gallary-with-buttons',
         'sections.projects-list-section',
+        'sections.big-media-section',
       ]
     >;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
@@ -591,6 +592,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Description: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -617,6 +619,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
         'sections.advantages-section',
         'sections.advantages-section-v2',
         'sections.about-section',
+        'sections.big-media-section',
       ]
     >;
     SEO: Schema.Attribute.Component<'shared.seo', false>;

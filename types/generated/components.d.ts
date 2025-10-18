@@ -50,7 +50,18 @@ export interface SectionsBigGallarySection extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+    lightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     Title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsBigMediaSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_big_media_sections';
+  info: {
+    displayName: 'BigMediaSection';
+  };
+  attributes: {
+    Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -200,6 +211,7 @@ export interface SectionsVideoSection extends Struct.ComponentSchema {
   attributes: {
     Button: Schema.Attribute.Component<'shared.button', true>;
     Description: Schema.Attribute.Text;
+    lightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     MobileVideo: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
@@ -241,7 +253,7 @@ export interface SharedButton extends Struct.ComponentSchema {
   attributes: {
     href: Schema.Attribute.String & Schema.Attribute.Required;
     Text: Schema.Attribute.String & Schema.Attribute.Required;
-    Variant: Schema.Attribute.Enumeration<['primary', 'secondary']> &
+    Variant: Schema.Attribute.Enumeration<['primary', 'secondary', 'white']> &
       Schema.Attribute.DefaultTo<'primary'>;
   };
 }
@@ -407,6 +419,7 @@ declare module '@strapi/strapi' {
       'sections.advantages-section': SectionsAdvantagesSection;
       'sections.advantages-section-v2': SectionsAdvantagesSectionV2;
       'sections.big-gallary-section': SectionsBigGallarySection;
+      'sections.big-media-section': SectionsBigMediaSection;
       'sections.call-to-action': SectionsCallToAction;
       'sections.call-to-action-v2': SectionsCallToActionV2;
       'sections.content-section': SectionsContentSection;

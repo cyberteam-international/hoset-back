@@ -18,7 +18,8 @@
       "default": "primary",
       "enum": [
         "primary",
-        "secondary"
+        "secondary",
+        "white"
       ]
     }
   },

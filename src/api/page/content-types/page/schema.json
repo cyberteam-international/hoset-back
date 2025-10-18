@@ -50,7 +50,8 @@
         "sections.call-to-action-v2",
         "sections.content-section",
         "sections.gallary-with-buttons",
-        "sections.projects-list-section"
+        "sections.projects-list-section",
+        "sections.big-media-section"
       ]
     },
     "SEO": {

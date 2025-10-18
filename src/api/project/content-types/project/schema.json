@@ -18,6 +18,9 @@
       "type": "uid",
       "targetField": "Title"
     },
+    "Description": {
+      "type": "string"
+    },
     "ColorCode": {
       "type": "string"
     },
@@ -53,7 +56,8 @@
         "sections.big-gallary-section",
         "sections.advantages-section",
         "sections.advantages-section-v2",
-        "sections.about-section"
+        "sections.about-section",
+        "sections.big-media-section"
       ]
     },
     "SEO": {
