@@ -4,7 +4,7 @@ export default ({ env }) => ({
   app: {
     keys: env.array('APP_KEYS'),
   },
-  httpServer: {
-      requestTimeout: 1000 * 60 * 5, // 5 минут
-  },
+  // httpServer: {
+  //     requestTimeout: 1000 * 60 * 5,
+  // },
 });
