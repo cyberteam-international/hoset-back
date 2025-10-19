@@ -1,7 +1,7 @@
 {
   "collectionName": "components_sections_video_sections",
   "info": {
-    "displayName": "VideoSection"
+    "displayName": "MediaSection"
   },
   "options": {},
   "attributes": {
@@ -19,17 +19,7 @@
       "component": "shared.button",
       "repeatable": true
     },
-    "Video": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "MobileVideo": {
+    "Media": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [

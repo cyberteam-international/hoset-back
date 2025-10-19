@@ -164,6 +164,9 @@ export interface SectionsHeroSection extends Struct.ComponentSchema {
     Button: Schema.Attribute.Component<'shared.button', true>;
     Description: Schema.Attribute.Text;
     Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    MobileMedia: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -206,18 +209,15 @@ export interface SectionsTextSection extends Struct.ComponentSchema {
 export interface SectionsVideoSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_video_sections';
   info: {
-    displayName: 'VideoSection';
+    displayName: 'MediaSection';
   };
   attributes: {
     Button: Schema.Attribute.Component<'shared.button', true>;
     Description: Schema.Attribute.Text;
     lightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    MobileVideo: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
+    Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Title: Schema.Attribute.String;
     TopLeftText: Schema.Attribute.String;
-    Video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
