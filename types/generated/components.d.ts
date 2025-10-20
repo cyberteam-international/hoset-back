@@ -7,7 +7,7 @@ export interface SectionsAboutSection extends Struct.ComponentSchema {
   };
   attributes: {
     Button: Schema.Attribute.Component<'shared.button', false>;
-    Description: Schema.Attribute.Text;
+    Description: Schema.Attribute.RichText;
     lightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Title: Schema.Attribute.RichText;
@@ -168,6 +168,22 @@ export interface SectionsHeroSection extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionsHeroSectionV2 extends Struct.ComponentSchema {
+  collectionName: 'components_sections_hero_section_v2s';
+  info: {
+    displayName: 'HeroSectionV2';
+  };
+  attributes: {
+    Button: Schema.Attribute.Component<'shared.button', false>;
+    Description: Schema.Attribute.Text;
+    Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    MobileMedia: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -427,6 +443,7 @@ declare module '@strapi/strapi' {
       'sections.gallary-section': SectionsGallarySection;
       'sections.gallary-with-buttons': SectionsGallaryWithButtons;
       'sections.hero-section': SectionsHeroSection;
+      'sections.hero-section-v2': SectionsHeroSectionV2;
       'sections.included-section': SectionsIncludedSection;
       'sections.projects-list-section': SectionsProjectsListSection;
       'sections.text-section': SectionsTextSection;

@@ -51,7 +51,8 @@
         "sections.content-section",
         "sections.gallary-with-buttons",
         "sections.projects-list-section",
-        "sections.big-media-section"
+        "sections.big-media-section",
+        "sections.hero-section-v2"
       ]
     },
     "SEO": {

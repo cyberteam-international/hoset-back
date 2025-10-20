@@ -5,9 +5,6 @@
   },
   "options": {},
   "attributes": {
-    "Description": {
-      "type": "text"
-    },
     "Media": {
       "type": "media",
       "multiple": false,
@@ -29,6 +26,9 @@
     "lightVersion": {
       "type": "boolean",
       "default": false
+    },
+    "Description": {
+      "type": "richtext"
     }
   },
   "config": {}
