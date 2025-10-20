@@ -14,6 +14,7 @@ export default factories.createCoreController('api::home-page.home-page', ({ str
           pages: {
             populate: {
               HomePageMediaPreview: true, // Кастомное поле HomePageMediaPreview
+              HomePageLogo: true,
             }
           }
         }

@@ -537,6 +537,9 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    HomePageLogo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     HomePageMediaPreview: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
@@ -563,6 +566,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'sections.projects-list-section',
         'sections.big-media-section',
         'sections.hero-section-v2',
+        'sections.included-section-v2',
       ]
     >;
     SEO: Schema.Attribute.Component<'shared.seo', false>;

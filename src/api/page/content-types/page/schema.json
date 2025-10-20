@@ -33,6 +33,16 @@
         "audios"
       ]
     },
+    "HomePageLogo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
     "Sections": {
       "type": "dynamiczone",
       "components": [
@@ -52,7 +62,8 @@
         "sections.gallary-with-buttons",
         "sections.projects-list-section",
         "sections.big-media-section",
-        "sections.hero-section-v2"
+        "sections.hero-section-v2",
+        "sections.included-section-v2"
       ]
     },
     "SEO": {

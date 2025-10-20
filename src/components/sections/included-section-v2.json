@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_included_section_v2s",
+  "info": {
+    "displayName": "IncludedSectionV2"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "IncludedBoxes": {
+      "type": "component",
+      "component": "shared.included-box",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -200,6 +200,18 @@ export interface SectionsIncludedSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsIncludedSectionV2 extends Struct.ComponentSchema {
+  collectionName: 'components_sections_included_section_v2s';
+  info: {
+    displayName: 'IncludedSectionV2';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text;
+    IncludedBoxes: Schema.Attribute.Component<'shared.included-box', true>;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsProjectsListSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_projects_list_sections';
   info: {
@@ -445,6 +457,7 @@ declare module '@strapi/strapi' {
       'sections.hero-section': SectionsHeroSection;
       'sections.hero-section-v2': SectionsHeroSectionV2;
       'sections.included-section': SectionsIncludedSection;
+      'sections.included-section-v2': SectionsIncludedSectionV2;
       'sections.projects-list-section': SectionsProjectsListSection;
       'sections.text-section': SectionsTextSection;
       'sections.video-section': SectionsVideoSection;
