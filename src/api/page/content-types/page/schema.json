@@ -63,7 +63,8 @@
         "sections.projects-list-section",
         "sections.big-media-section",
         "sections.hero-section-v2",
-        "sections.included-section-v2"
+        "sections.included-section-v2",
+        "sections.content-section-v2"
       ]
     },
     "SEO": {

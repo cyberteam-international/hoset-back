@@ -29,6 +29,8 @@ export default factories.createCoreController('api::page.page', ({ strapi }) => 
               Media: true,
               MobileMedia: true,
               Description: true,
+              UnicFontSizeForTitle: true,
+              UnicFontSizeForTitileMobile: true,
               // Customers Section
               CustomersBlocks: {
                 populate: {

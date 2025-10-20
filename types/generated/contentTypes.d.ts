@@ -567,6 +567,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'sections.big-media-section',
         'sections.hero-section-v2',
         'sections.included-section-v2',
+        'sections.content-section-v2',
       ]
     >;
     SEO: Schema.Attribute.Component<'shared.seo', false>;

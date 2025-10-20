@@ -43,6 +43,12 @@
         "videos",
         "audios"
       ]
+    },
+    "UnicFontSizeForTitle": {
+      "type": "string"
+    },
+    "UnicFontSizeForTitileMobile": {
+      "type": "string"
     }
   },
   "config": {}

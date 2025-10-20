@@ -102,6 +102,8 @@ export interface SectionsCallToActionV2 extends Struct.ComponentSchema {
     >;
     Title: Schema.Attribute.String;
     TopLeftText: Schema.Attribute.String;
+    UnicFontSizeForTitileMobile: Schema.Attribute.String;
+    UnicFontSizeForTitle: Schema.Attribute.String;
     Video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
@@ -110,6 +112,16 @@ export interface SectionsContentSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_content_sections';
   info: {
     displayName: 'ContentSection';
+  };
+  attributes: {
+    Rows: Schema.Attribute.Component<'shared.content-raw', true>;
+  };
+}
+
+export interface SectionsContentSectionV2 extends Struct.ComponentSchema {
+  collectionName: 'components_sections_content_section_v2s';
+  info: {
+    displayName: 'ContentSectionV2';
   };
   attributes: {
     Rows: Schema.Attribute.Component<'shared.content-raw', true>;
@@ -246,6 +258,8 @@ export interface SectionsVideoSection extends Struct.ComponentSchema {
     Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Title: Schema.Attribute.String;
     TopLeftText: Schema.Attribute.String;
+    UnicFontSizeForTitileMobile: Schema.Attribute.String;
+    UnicFontSizeForTitle: Schema.Attribute.String;
   };
 }
 
@@ -451,6 +465,7 @@ declare module '@strapi/strapi' {
       'sections.call-to-action': SectionsCallToAction;
       'sections.call-to-action-v2': SectionsCallToActionV2;
       'sections.content-section': SectionsContentSection;
+      'sections.content-section-v2': SectionsContentSectionV2;
       'sections.customers-section': SectionsCustomersSection;
       'sections.gallary-section': SectionsGallarySection;
       'sections.gallary-with-buttons': SectionsGallaryWithButtons;
