@@ -257,6 +257,8 @@ export interface SectionsVideoSection extends Struct.ComponentSchema {
     lightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Title: Schema.Attribute.String;
+    TitlePositionV2: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     TopLeftText: Schema.Attribute.String;
     UnicFontSizeForTitileMobile: Schema.Attribute.String;
     UnicFontSizeForTitle: Schema.Attribute.String;

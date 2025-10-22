@@ -38,6 +38,10 @@
     },
     "UnicFontSizeForTitileMobile": {
       "type": "string"
+    },
+    "TitlePositionV2": {
+      "type": "boolean",
+      "default": false
     }
   },
   "config": {}
