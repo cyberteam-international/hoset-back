@@ -567,13 +567,16 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    current_language: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::language.language'
+    >;
     HomePageLogo: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
     HomePageMediaPreview: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    language: Schema.Attribute.Relation<'oneToOne', 'api::language.language'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
       Schema.Attribute.Private;
