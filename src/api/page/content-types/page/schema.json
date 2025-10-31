@@ -71,6 +71,11 @@
       "type": "component",
       "component": "shared.seo",
       "repeatable": false
+    },
+    "language": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::language.language"
     }
   }
 }

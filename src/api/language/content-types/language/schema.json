@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "languages",
+  "info": {
+    "singularName": "language",
+    "pluralName": "languages",
+    "displayName": "language"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "language_name": {
+      "type": "string"
+    },
+    "language_tag": {
+      "type": "uid",
+      "targetField": "language_name",
+      "required": true
+    }
+  }
+}
