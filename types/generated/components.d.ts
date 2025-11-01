@@ -456,6 +456,20 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSocialLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_social_links';
+  info: {
+    displayName: 'SocialLink';
+  };
+  attributes: {
+    alternativeText: Schema.Attribute.String;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    Icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -493,6 +507,7 @@ declare module '@strapi/strapi' {
       'shared.seo': SharedSeo;
       'shared.slide-with-buttons': SharedSlideWithButtons;
       'shared.slider': SharedSlider;
+      'shared.social-link': SharedSocialLink;
     }
   }
 }
