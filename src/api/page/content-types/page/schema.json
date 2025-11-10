@@ -26,12 +26,27 @@
     "HomePageMediaPreview": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images", "files", "videos", "audios"]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "HomePageButtonText": {
+      "type": "string",
+      "default": "Visit now",
+      "required": false
     },
     "HomePageLogo": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images", "files", "videos", "audios"]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "current_language": {
       "type": "relation",

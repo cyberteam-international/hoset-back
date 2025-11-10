@@ -28,6 +28,7 @@ export default factories.createCoreController(
           where: whereCondition,
           populate: {
             current_language: true,
+            HomePageButtonText: true,
 
             SEO: {
               populate: {

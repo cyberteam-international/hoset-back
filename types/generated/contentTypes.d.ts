@@ -568,6 +568,8 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
       'oneToOne',
       'api::language.language'
     >;
+    HomePageButtonText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Visit now'>;
     HomePageLogo: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
