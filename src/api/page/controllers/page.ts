@@ -46,6 +46,7 @@ export default factories.createCoreController(
                 Media: true,
                 MobileMedia: true,
                 Description: true,
+                DescriptionV2: true,
                 UnicFontSizeForTitle: true,
                 UnicFontSizeForTitileMobile: true,
                 // Customers Section

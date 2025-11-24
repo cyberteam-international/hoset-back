@@ -9,7 +9,17 @@
       "type": "string"
     },
     "Description": {
-      "type": "text"
+      "type": "text",
+      "conditions": {
+        "visible": {
+          "!=": [
+            {
+              "var": "useDescriptionV2"
+            },
+            true
+          ]
+        }
+      }
     },
     "TopLeftText": {
       "type": "string"
@@ -40,6 +50,23 @@
       "type": "string"
     },
     "TitlePositionV2": {
+      "type": "boolean",
+      "default": false
+    },
+    "DescriptionV2": {
+      "type": "text",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "useDescriptionV2"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "useDescriptionV2": {
       "type": "boolean",
       "default": false
     }

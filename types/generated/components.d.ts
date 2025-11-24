@@ -254,6 +254,7 @@ export interface SectionsVideoSection extends Struct.ComponentSchema {
   attributes: {
     Button: Schema.Attribute.Component<'shared.button', true>;
     Description: Schema.Attribute.Text;
+    DescriptionV2: Schema.Attribute.Text;
     lightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Title: Schema.Attribute.String;
@@ -262,6 +263,8 @@ export interface SectionsVideoSection extends Struct.ComponentSchema {
     TopLeftText: Schema.Attribute.String;
     UnicFontSizeForTitileMobile: Schema.Attribute.String;
     UnicFontSizeForTitle: Schema.Attribute.String;
+    useDescriptionV2: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
   };
 }
 
