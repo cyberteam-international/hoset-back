@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_sizes",
+  "info": {
+    "displayName": "Size"
+  },
+  "options": {},
+  "attributes": {
+    "Value": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

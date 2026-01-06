@@ -316,6 +316,17 @@ export interface SharedCallToActionItems extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCharacteristic extends Struct.ComponentSchema {
+  collectionName: 'components_shared_characteristics';
+  info: {
+    displayName: 'Characteristic';
+  };
+  attributes: {
+    filter: Schema.Attribute.Relation<'oneToOne', 'api::filter.filter'>;
+    Value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedContentRaw extends Struct.ComponentSchema {
   collectionName: 'components_shared_content_raws';
   info: {
@@ -435,6 +446,16 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSize extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sizes';
+  info: {
+    displayName: 'Size';
+  };
+  attributes: {
+    Value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedSlideWithButtons extends Struct.ComponentSchema {
   collectionName: 'components_shared_slide_with_buttons';
   info: {
@@ -499,6 +520,7 @@ declare module '@strapi/strapi' {
       'shared.advantages-box-v2': SharedAdvantagesBoxV2;
       'shared.button': SharedButton;
       'shared.call-to-action-items': SharedCallToActionItems;
+      'shared.characteristic': SharedCharacteristic;
       'shared.content-raw': SharedContentRaw;
       'shared.customers-block': SharedCustomersBlock;
       'shared.gallary-item-with-link': SharedGallaryItemWithLink;
@@ -508,6 +530,7 @@ declare module '@strapi/strapi' {
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
+      'shared.size': SharedSize;
       'shared.slide-with-buttons': SharedSlideWithButtons;
       'shared.slider': SharedSlider;
       'shared.social-link': SharedSocialLink;

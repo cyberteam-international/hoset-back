@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_characteristics",
+  "info": {
+    "displayName": "Characteristic"
+  },
+  "options": {},
+  "attributes": {
+    "filter": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::filter.filter"
+    },
+    "Value": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}
