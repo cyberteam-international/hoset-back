@@ -23,16 +23,18 @@ export default factories.createCoreController(
         publishedAt: { $notNull: true },
       };
 
-      const entities = await strapi.db.query("api::category.category").findMany({
-        where: baseFilters,
-        populate: {
-          Thumbnail: true,
-          products: true,
-        },
-        orderBy: ctx.query.sort || { createdAt: "desc" },
-        offset: pagination.start || 0,
-        limit: pagination.limit || pagination.pageSize || 25,
-      });
+      const entities = await strapi.db
+        .query("api::category.category")
+        .findMany({
+          where: baseFilters,
+          populate: {
+            Thumbnail: true,
+            products: true,
+          },
+          orderBy: ctx.query.sort || { createdAt: "desc" },
+          offset: pagination.start || 0,
+          limit: pagination.limit || pagination.pageSize || 25,
+        });
 
       const total = await strapi.db.query("api::category.category").count({
         where: baseFilters,

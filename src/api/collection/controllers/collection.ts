@@ -23,16 +23,18 @@ export default factories.createCoreController(
         publishedAt: { $notNull: true },
       };
 
-      const entities = await strapi.db.query("api::collection.collection").findMany({
-        where: baseFilters,
-        populate: {
-          Thumbnail: true,
-          products: true,
-        },
-        orderBy: ctx.query.sort || { createdAt: "desc" },
-        offset: pagination.start || 0,
-        limit: pagination.limit || pagination.pageSize || 25,
-      });
+      const entities = await strapi.db
+        .query("api::collection.collection")
+        .findMany({
+          where: baseFilters,
+          populate: {
+            Thumbnail: true,
+            products: true,
+          },
+          orderBy: ctx.query.sort || { createdAt: "desc" },
+          offset: pagination.start || 0,
+          limit: pagination.limit || pagination.pageSize || 25,
+        });
 
       const total = await strapi.db.query("api::collection.collection").count({
         where: baseFilters,
@@ -58,16 +60,18 @@ export default factories.createCoreController(
     async findOne(ctx) {
       const { id } = ctx.params;
 
-      const entity = await strapi.db.query("api::collection.collection").findOne({
-        where: {
-          documentId: id,
-          publishedAt: { $notNull: true },
-        },
-        populate: {
-          Thumbnail: true,
-          products: true,
-        },
-      });
+      const entity = await strapi.db
+        .query("api::collection.collection")
+        .findOne({
+          where: {
+            documentId: id,
+            publishedAt: { $notNull: true },
+          },
+          populate: {
+            Thumbnail: true,
+            products: true,
+          },
+        });
 
       if (!entity) {
         return ctx.notFound("Collection not found");
