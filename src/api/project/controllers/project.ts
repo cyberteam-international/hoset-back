@@ -2,27 +2,27 @@
  * project controller
  */
 
-import { factories } from '@strapi/strapi'
+import { factories } from "@strapi/strapi";
 
-export default factories.createCoreController('api::project.project', ({ strapi }) => ({
+export default factories.createCoreController("api::project.project", ({ strapi }) => ({
   async find(ctx) {
     // Проверяем, есть ли slug в query параметрах
     if (ctx.query.slug) {
       const slug = ctx.query.slug;
-      
+
       // Используем детальный populate для полного контроля
-      const entity = await strapi.db.query('api::project.project').findOne({
+      const entity = await strapi.db.query("api::project.project").findOne({
         where: { slug },
         populate: {
           SEO: {
             populate: {
               MetaImage: true,
-              Keywords: true
-            }
+              Keywords: true,
+            },
           },
           MediaPreview: true,
           category_of_projects: {
-            fields: ['Name', 'slug'] // Загружаем только нужные поля категорий
+            fields: ["Name", "slug"], // Загружаем только нужные поля категорий
           },
           Sections: {
             populate: {
@@ -37,17 +37,17 @@ export default factories.createCoreController('api::project.project', ({ strapi 
                 populate: {
                   CustomersBlockIconUp: true,
                   CustomersBlockIconCenter: true,
-                  CustomersBlockIconDown: true
-                }
+                  CustomersBlockIconDown: true,
+                },
               },
               // Included Section
               lightVersion: true,
-              
+
               IncludedBoxes: {
                 populate: {
                   Image: true,
-                  Button: true
-                }
+                  Button: true,
+                },
               },
               // Video Section
               Video: true,
@@ -57,55 +57,64 @@ export default factories.createCoreController('api::project.project', ({ strapi 
               // Advantages Section (поддерживает обе версии)
               AdvantagesBoxes: {
                 populate: {
-                  Icon: true
-                }
+                  Icon: true,
+                },
               },
               // Call To Action Section
               CallToActionItems: {
-                populate: true
+                populate: true,
               },
               // Gallery Section
               GallaryItems: {
                 populate: {
                   Image: true,
                   Media: true,
-                  Button: true
-                }
+                  Button: true,
+                },
               },
               // Content Section
               Rows: {
                 populate: {
                   Image: true,
-                  Image2: true
-                }
+                  Image2: true,
+                },
               },
               // Text Section
               TextItems: {
-                populate: true
-              }
-            }
-          }
-        }
+                populate: true,
+              },
+              // Projects List Section (v1 & v2)
+              Projects: {
+                populate: {
+                  category_of_projects: {
+                    fields: ["Name", "slug"],
+                  },
+                  MediaPreview: true,
+                },
+              },
+            },
+          },
+        },
       });
 
       if (!entity) {
-        return ctx.notFound('Project not found');
+        return ctx.notFound("Project not found");
       }
 
       return { data: entity, meta: {} };
     }
-    
+
     // Если нет slug, используем кастомный find с populate для категорий
     ctx.query = {
       ...ctx.query,
       populate: {
         category_of_projects: {
-          fields: ['Name', 'slug']
+          fields: ["Name", "slug"],
         },
-        MediaPreview: true
-      }
+        MediaPreview: true,
+      },
     };
-    
+
     return await super.find(ctx);
-  }
+  },
 }));

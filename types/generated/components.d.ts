@@ -1,244 +1,232 @@
-import type { Schema, Struct } from '@strapi/strapi';
+import type { Schema, Struct } from "@strapi/strapi";
 
 export interface SectionsAboutSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_about_sections';
+  collectionName: "components_sections_about_sections";
   info: {
-    displayName: 'AboutSection';
+    displayName: "AboutSection";
   };
   attributes: {
-    Button: Schema.Attribute.Component<'shared.button', false>;
+    Button: Schema.Attribute.Component<"shared.button", false>;
     Description: Schema.Attribute.RichText;
     lightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Media: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     Title: Schema.Attribute.RichText;
   };
 }
 
 export interface SectionsAdvantagesSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_advantages_sections';
+  collectionName: "components_sections_advantages_sections";
   info: {
-    displayName: 'AdvantagesSection';
+    displayName: "AdvantagesSection";
   };
   attributes: {
-    AdvantagesBoxes: Schema.Attribute.Component<'shared.advantages-box', true>;
+    AdvantagesBoxes: Schema.Attribute.Component<"shared.advantages-box", true>;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SectionsAdvantagesSectionV2 extends Struct.ComponentSchema {
-  collectionName: 'components_sections_advantages_section_v2s';
+  collectionName: "components_sections_advantages_section_v2s";
   info: {
-    displayName: 'AdvantagesSectionV2';
+    displayName: "AdvantagesSectionV2";
   };
   attributes: {
-    AdvantagesBoxes: Schema.Attribute.Component<
-      'shared.advantages-box-v2',
-      true
-    >;
+    AdvantagesBoxes: Schema.Attribute.Component<"shared.advantages-box-v2", true>;
     Description: Schema.Attribute.Text;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SectionsBigGallarySection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_big_gallary_sections';
+  collectionName: "components_sections_big_gallary_sections";
   info: {
-    displayName: 'BigGallarySection';
+    displayName: "BigGallarySection";
   };
   attributes: {
-    Gallary: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    Gallary: Schema.Attribute.Media<"images" | "files" | "videos" | "audios", true>;
     lightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SectionsBigMediaSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_big_media_sections';
+  collectionName: "components_sections_big_media_sections";
   info: {
-    displayName: 'BigMediaSection';
+    displayName: "BigMediaSection";
   };
   attributes: {
-    Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Media: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
   };
 }
 
 export interface SectionsCallToAction extends Struct.ComponentSchema {
-  collectionName: 'components_sections_call_to_actions';
+  collectionName: "components_sections_call_to_actions";
   info: {
-    displayName: 'CallToAction';
+    displayName: "CallToAction";
   };
   attributes: {
-    Button: Schema.Attribute.Component<'shared.button', false>;
-    CallToActionItems: Schema.Attribute.Component<
-      'shared.call-to-action-items',
-      true
-    >;
+    Button: Schema.Attribute.Component<"shared.button", false>;
+    CallToActionItems: Schema.Attribute.Component<"shared.call-to-action-items", true>;
     Description: Schema.Attribute.Text;
-    MobileVideo: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
+    MobileVideo: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     TopLeftText: Schema.Attribute.String;
-    Video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Video: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
   };
 }
 
 export interface SectionsCallToActionV2 extends Struct.ComponentSchema {
-  collectionName: 'components_sections_call_to_action_v2s';
+  collectionName: "components_sections_call_to_action_v2s";
   info: {
-    displayName: 'CallToActionV2';
+    displayName: "CallToActionV2";
   };
   attributes: {
-    Button: Schema.Attribute.Component<'shared.button', false>;
-    CallToActionItems: Schema.Attribute.Component<
-      'shared.call-to-action-items',
-      true
-    >;
+    Button: Schema.Attribute.Component<"shared.button", false>;
+    CallToActionItems: Schema.Attribute.Component<"shared.call-to-action-items", true>;
     Description: Schema.Attribute.Text;
-    MobileVideo: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
+    MobileVideo: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     Title: Schema.Attribute.String;
     TopLeftText: Schema.Attribute.String;
     UnicFontSizeForTitileMobile: Schema.Attribute.String;
     UnicFontSizeForTitle: Schema.Attribute.String;
-    Video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Video: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
   };
 }
 
 export interface SectionsContentSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_content_sections';
+  collectionName: "components_sections_content_sections";
   info: {
-    displayName: 'ContentSection';
+    displayName: "ContentSection";
   };
   attributes: {
-    Rows: Schema.Attribute.Component<'shared.content-raw', true>;
+    Rows: Schema.Attribute.Component<"shared.content-raw", true>;
   };
 }
 
 export interface SectionsContentSectionV2 extends Struct.ComponentSchema {
-  collectionName: 'components_sections_content_section_v2s';
+  collectionName: "components_sections_content_section_v2s";
   info: {
-    displayName: 'ContentSectionV2';
+    displayName: "ContentSectionV2";
   };
   attributes: {
-    Rows: Schema.Attribute.Component<'shared.content-raw', true>;
+    Rows: Schema.Attribute.Component<"shared.content-raw", true>;
   };
 }
 
 export interface SectionsCustomersSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_customers_sections';
+  collectionName: "components_sections_customers_sections";
   info: {
-    displayName: 'CustomersSection';
+    displayName: "CustomersSection";
   };
   attributes: {
-    CustomersBlocks: Schema.Attribute.Component<'shared.customers-block', true>;
+    CustomersBlocks: Schema.Attribute.Component<"shared.customers-block", true>;
     Description: Schema.Attribute.Text;
-    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     lightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SectionsGallarySection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_gallary_sections';
+  collectionName: "components_sections_gallary_sections";
   info: {
-    displayName: 'GallarySection';
+    displayName: "GallarySection";
   };
   attributes: {
-    GallaryItems: Schema.Attribute.Component<
-      'shared.gallary-item-with-link',
-      true
-    >;
+    GallaryItems: Schema.Attribute.Component<"shared.gallary-item-with-link", true>;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SectionsGallaryWithButtons extends Struct.ComponentSchema {
-  collectionName: 'components_sections_gallary_with_buttons';
+  collectionName: "components_sections_gallary_with_buttons";
   info: {
-    displayName: 'GallaryWithButtons';
+    displayName: "GallaryWithButtons";
   };
   attributes: {
-    GallaryItems: Schema.Attribute.Component<'shared.slide-with-buttons', true>;
+    GallaryItems: Schema.Attribute.Component<"shared.slide-with-buttons", true>;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SectionsHeroSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_hero_sections';
+  collectionName: "components_sections_hero_sections";
   info: {
-    displayName: 'HeroSection';
+    displayName: "HeroSection";
   };
   attributes: {
-    Button: Schema.Attribute.Component<'shared.button', true>;
+    Button: Schema.Attribute.Component<"shared.button", true>;
     Description: Schema.Attribute.Text;
-    Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    MobileMedia: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
+    Media: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    MobileMedia: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
 export interface SectionsHeroSectionV2 extends Struct.ComponentSchema {
-  collectionName: 'components_sections_hero_section_v2s';
+  collectionName: "components_sections_hero_section_v2s";
   info: {
-    displayName: 'HeroSectionV2';
+    displayName: "HeroSectionV2";
   };
   attributes: {
-    Button: Schema.Attribute.Component<'shared.button', false>;
+    Button: Schema.Attribute.Component<"shared.button", false>;
     Description: Schema.Attribute.Text;
-    Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    MobileMedia: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
+    Media: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    MobileMedia: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SectionsIncludedSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_included_sections';
+  collectionName: "components_sections_included_sections";
   info: {
-    displayName: 'IncludedSection';
+    displayName: "IncludedSection";
   };
   attributes: {
     Description: Schema.Attribute.Text;
-    IncludedBoxes: Schema.Attribute.Component<'shared.included-box', true>;
+    IncludedBoxes: Schema.Attribute.Component<"shared.included-box", true>;
     lightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SectionsIncludedSectionV2 extends Struct.ComponentSchema {
-  collectionName: 'components_sections_included_section_v2s';
+  collectionName: "components_sections_included_section_v2s";
   info: {
-    displayName: 'IncludedSectionV2';
+    displayName: "IncludedSectionV2";
   };
   attributes: {
     Description: Schema.Attribute.Text;
-    IncludedBoxes: Schema.Attribute.Component<'shared.included-box', true>;
+    IncludedBoxes: Schema.Attribute.Component<"shared.included-box", true>;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SectionsProjectsListSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_projects_list_sections';
+  collectionName: "components_sections_projects_list_sections";
   info: {
-    displayName: 'ProjectsListSection';
+    displayName: "ProjectsListSection";
   };
   attributes: {
-    Projects: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
+    Projects: Schema.Attribute.Relation<"oneToMany", "api::project.project">;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsProjectsListSectionV2 extends Struct.ComponentSchema {
+  collectionName: "components_sections_projects_list_section_v2s";
+  info: {
+    displayName: "ProjectsListSectionV2";
+  };
+  attributes: {
+    Projects: Schema.Attribute.Relation<"oneToMany", "api::project.project">;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SectionsTextSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_text_sections';
+  collectionName: "components_sections_text_sections";
   info: {
-    displayName: 'TextSection';
+    displayName: "TextSection";
   };
   attributes: {
     Content: Schema.Attribute.RichText;
@@ -247,31 +235,29 @@ export interface SectionsTextSection extends Struct.ComponentSchema {
 }
 
 export interface SectionsVideoSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_video_sections';
+  collectionName: "components_sections_video_sections";
   info: {
-    displayName: 'MediaSection';
+    displayName: "MediaSection";
   };
   attributes: {
-    Button: Schema.Attribute.Component<'shared.button', true>;
+    Button: Schema.Attribute.Component<"shared.button", true>;
     Description: Schema.Attribute.Text;
     DescriptionV2: Schema.Attribute.Text;
     lightVersion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Media: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     Title: Schema.Attribute.String;
-    TitlePositionV2: Schema.Attribute.Boolean &
-      Schema.Attribute.DefaultTo<false>;
+    TitlePositionV2: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     TopLeftText: Schema.Attribute.String;
     UnicFontSizeForTitileMobile: Schema.Attribute.String;
     UnicFontSizeForTitle: Schema.Attribute.String;
-    useDescriptionV2: Schema.Attribute.Boolean &
-      Schema.Attribute.DefaultTo<false>;
+    useDescriptionV2: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };
 }
 
 export interface SharedAdvantagesBox extends Struct.ComponentSchema {
-  collectionName: 'components_shared_advantages_boxes';
+  collectionName: "components_shared_advantages_boxes";
   info: {
-    displayName: 'AdvantagesBox';
+    displayName: "AdvantagesBox";
   };
   attributes: {
     Description: Schema.Attribute.Text;
@@ -281,34 +267,33 @@ export interface SharedAdvantagesBox extends Struct.ComponentSchema {
 }
 
 export interface SharedAdvantagesBoxV2 extends Struct.ComponentSchema {
-  collectionName: 'components_shared_advantages_box_v2s';
+  collectionName: "components_shared_advantages_box_v2s";
   info: {
-    displayName: 'AdvantagesBoxV2';
+    displayName: "AdvantagesBoxV2";
   };
   attributes: {
     Description: Schema.Attribute.String;
-    Icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Icon: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SharedButton extends Struct.ComponentSchema {
-  collectionName: 'components_shared_buttons';
+  collectionName: "components_shared_buttons";
   info: {
-    displayName: 'Button';
+    displayName: "Button";
   };
   attributes: {
     href: Schema.Attribute.String & Schema.Attribute.Required;
     Text: Schema.Attribute.String & Schema.Attribute.Required;
-    Variant: Schema.Attribute.Enumeration<['primary', 'secondary', 'white']> &
-      Schema.Attribute.DefaultTo<'primary'>;
+    Variant: Schema.Attribute.Enumeration<["primary", "secondary", "white"]> & Schema.Attribute.DefaultTo<"primary">;
   };
 }
 
 export interface SharedCallToActionItems extends Struct.ComponentSchema {
-  collectionName: 'components_shared_call_to_action_items';
+  collectionName: "components_shared_call_to_action_items";
   info: {
-    displayName: 'CallToActionItems';
+    displayName: "CallToActionItems";
   };
   attributes: {
     href: Schema.Attribute.String;
@@ -317,89 +302,85 @@ export interface SharedCallToActionItems extends Struct.ComponentSchema {
 }
 
 export interface SharedCharacteristic extends Struct.ComponentSchema {
-  collectionName: 'components_shared_characteristics';
+  collectionName: "components_shared_characteristics";
   info: {
-    displayName: 'Characteristic';
+    displayName: "Characteristic";
   };
   attributes: {
-    filter: Schema.Attribute.Relation<'oneToOne', 'api::filter.filter'>;
+    filter: Schema.Attribute.Relation<"oneToOne", "api::filter.filter">;
     Value: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
 export interface SharedContentRaw extends Struct.ComponentSchema {
-  collectionName: 'components_shared_content_raws';
+  collectionName: "components_shared_content_raws";
   info: {
-    displayName: 'ContentRaw';
+    displayName: "ContentRaw";
   };
   attributes: {
     addSecondPicture: Schema.Attribute.Boolean;
     Description: Schema.Attribute.Text;
-    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Image2: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    Image2: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SharedCustomersBlock extends Struct.ComponentSchema {
-  collectionName: 'components_shared_customers_blocks';
+  collectionName: "components_shared_customers_blocks";
   info: {
-    displayName: 'CustomersBlock';
+    displayName: "CustomersBlock";
   };
   attributes: {
-    CustomersBlockIconCenter: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    CustomersBlockIconUp: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
+    CustomersBlockIconCenter: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    CustomersBlockIconUp: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     Description: Schema.Attribute.Text;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SharedGallaryItemWithLink extends Struct.ComponentSchema {
-  collectionName: 'components_shared_gallary_item_with_links';
+  collectionName: "components_shared_gallary_item_with_links";
   info: {
-    displayName: 'GallaryItemWithLink';
+    displayName: "GallaryItemWithLink";
   };
   attributes: {
     href: Schema.Attribute.String;
-    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     LinkText: Schema.Attribute.String;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SharedIncludedBox extends Struct.ComponentSchema {
-  collectionName: 'components_shared_included_boxes';
+  collectionName: "components_shared_included_boxes";
   info: {
-    displayName: 'IncludedBox';
+    displayName: "IncludedBox";
   };
   attributes: {
-    Button: Schema.Attribute.Component<'shared.medium-button', false>;
+    Button: Schema.Attribute.Component<"shared.medium-button", false>;
     Description: Schema.Attribute.Text;
-    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     Number: Schema.Attribute.String;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SharedMedia extends Struct.ComponentSchema {
-  collectionName: 'components_shared_media';
+  collectionName: "components_shared_media";
   info: {
-    displayName: 'Media';
-    icon: 'file-video';
+    displayName: "Media";
+    icon: "file-video";
   };
   attributes: {
-    file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    file: Schema.Attribute.Media<"images" | "files" | "videos">;
   };
 }
 
 export interface SharedMediumButton extends Struct.ComponentSchema {
-  collectionName: 'components_shared_medium_buttons';
+  collectionName: "components_shared_medium_buttons";
   info: {
-    displayName: 'MediumButton';
+    displayName: "MediumButton";
   };
   attributes: {
     href: Schema.Attribute.String;
@@ -408,10 +389,10 @@ export interface SharedMediumButton extends Struct.ComponentSchema {
 }
 
 export interface SharedQuote extends Struct.ComponentSchema {
-  collectionName: 'components_shared_quotes';
+  collectionName: "components_shared_quotes";
   info: {
-    displayName: 'Quote';
-    icon: 'indent';
+    displayName: "Quote";
+    icon: "indent";
   };
   attributes: {
     body: Schema.Attribute.Text;
@@ -420,11 +401,11 @@ export interface SharedQuote extends Struct.ComponentSchema {
 }
 
 export interface SharedRichText extends Struct.ComponentSchema {
-  collectionName: 'components_shared_rich_texts';
+  collectionName: "components_shared_rich_texts";
   info: {
-    description: '';
-    displayName: 'Rich text';
-    icon: 'align-justify';
+    description: "";
+    displayName: "Rich text";
+    icon: "align-justify";
   };
   attributes: {
     body: Schema.Attribute.RichText;
@@ -432,24 +413,24 @@ export interface SharedRichText extends Struct.ComponentSchema {
 }
 
 export interface SharedSeo extends Struct.ComponentSchema {
-  collectionName: 'components_shared_seos';
+  collectionName: "components_shared_seos";
   info: {
-    description: '';
-    displayName: 'Seo';
-    icon: 'allergies';
-    name: 'Seo';
+    description: "";
+    displayName: "Seo";
+    icon: "allergies";
+    name: "Seo";
   };
   attributes: {
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    shareImage: Schema.Attribute.Media<'images'>;
+    shareImage: Schema.Attribute.Media<"images">;
   };
 }
 
 export interface SharedSize extends Struct.ComponentSchema {
-  collectionName: 'components_shared_sizes';
+  collectionName: "components_shared_sizes";
   info: {
-    displayName: 'Size';
+    displayName: "Size";
   };
   attributes: {
     Value: Schema.Attribute.String & Schema.Attribute.Required;
@@ -457,83 +438,83 @@ export interface SharedSize extends Struct.ComponentSchema {
 }
 
 export interface SharedSlideWithButtons extends Struct.ComponentSchema {
-  collectionName: 'components_shared_slide_with_buttons';
+  collectionName: "components_shared_slide_with_buttons";
   info: {
-    displayName: 'SlideWithButtons';
+    displayName: "SlideWithButtons";
   };
   attributes: {
-    Button: Schema.Attribute.Component<'shared.button', true>;
-    Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Button: Schema.Attribute.Component<"shared.button", true>;
+    Media: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     Title: Schema.Attribute.String;
   };
 }
 
 export interface SharedSlider extends Struct.ComponentSchema {
-  collectionName: 'components_shared_sliders';
+  collectionName: "components_shared_sliders";
   info: {
-    description: '';
-    displayName: 'Slider';
-    icon: 'address-book';
+    description: "";
+    displayName: "Slider";
+    icon: "address-book";
   };
   attributes: {
-    files: Schema.Attribute.Media<'images', true>;
+    files: Schema.Attribute.Media<"images", true>;
   };
 }
 
 export interface SharedSocialLink extends Struct.ComponentSchema {
-  collectionName: 'components_shared_social_links';
+  collectionName: "components_shared_social_links";
   info: {
-    displayName: 'SocialLink';
+    displayName: "SocialLink";
   };
   attributes: {
     alternativeText: Schema.Attribute.String;
     href: Schema.Attribute.String & Schema.Attribute.Required;
-    Icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Schema.Attribute.Required;
+    Icon: Schema.Attribute.Media<"images" | "files" | "videos" | "audios"> & Schema.Attribute.Required;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-declare module '@strapi/strapi' {
+declare module "@strapi/strapi" {
   export module Public {
     export interface ComponentSchemas {
-      'sections.about-section': SectionsAboutSection;
-      'sections.advantages-section': SectionsAdvantagesSection;
-      'sections.advantages-section-v2': SectionsAdvantagesSectionV2;
-      'sections.big-gallary-section': SectionsBigGallarySection;
-      'sections.big-media-section': SectionsBigMediaSection;
-      'sections.call-to-action': SectionsCallToAction;
-      'sections.call-to-action-v2': SectionsCallToActionV2;
-      'sections.content-section': SectionsContentSection;
-      'sections.content-section-v2': SectionsContentSectionV2;
-      'sections.customers-section': SectionsCustomersSection;
-      'sections.gallary-section': SectionsGallarySection;
-      'sections.gallary-with-buttons': SectionsGallaryWithButtons;
-      'sections.hero-section': SectionsHeroSection;
-      'sections.hero-section-v2': SectionsHeroSectionV2;
-      'sections.included-section': SectionsIncludedSection;
-      'sections.included-section-v2': SectionsIncludedSectionV2;
-      'sections.projects-list-section': SectionsProjectsListSection;
-      'sections.text-section': SectionsTextSection;
-      'sections.video-section': SectionsVideoSection;
-      'shared.advantages-box': SharedAdvantagesBox;
-      'shared.advantages-box-v2': SharedAdvantagesBoxV2;
-      'shared.button': SharedButton;
-      'shared.call-to-action-items': SharedCallToActionItems;
-      'shared.characteristic': SharedCharacteristic;
-      'shared.content-raw': SharedContentRaw;
-      'shared.customers-block': SharedCustomersBlock;
-      'shared.gallary-item-with-link': SharedGallaryItemWithLink;
-      'shared.included-box': SharedIncludedBox;
-      'shared.media': SharedMedia;
-      'shared.medium-button': SharedMediumButton;
-      'shared.quote': SharedQuote;
-      'shared.rich-text': SharedRichText;
-      'shared.seo': SharedSeo;
-      'shared.size': SharedSize;
-      'shared.slide-with-buttons': SharedSlideWithButtons;
-      'shared.slider': SharedSlider;
-      'shared.social-link': SharedSocialLink;
+      "sections.about-section": SectionsAboutSection;
+      "sections.advantages-section": SectionsAdvantagesSection;
+      "sections.advantages-section-v2": SectionsAdvantagesSectionV2;
+      "sections.big-gallary-section": SectionsBigGallarySection;
+      "sections.big-media-section": SectionsBigMediaSection;
+      "sections.call-to-action": SectionsCallToAction;
+      "sections.call-to-action-v2": SectionsCallToActionV2;
+      "sections.content-section": SectionsContentSection;
+      "sections.content-section-v2": SectionsContentSectionV2;
+      "sections.customers-section": SectionsCustomersSection;
+      "sections.gallary-section": SectionsGallarySection;
+      "sections.gallary-with-buttons": SectionsGallaryWithButtons;
+      "sections.hero-section": SectionsHeroSection;
+      "sections.hero-section-v2": SectionsHeroSectionV2;
+      "sections.included-section": SectionsIncludedSection;
+      "sections.included-section-v2": SectionsIncludedSectionV2;
+      "sections.projects-list-section": SectionsProjectsListSection;
+      "sections.projects-list-section-v2": SectionsProjectsListSectionV2;
+      "sections.text-section": SectionsTextSection;
+      "sections.video-section": SectionsVideoSection;
+      "shared.advantages-box": SharedAdvantagesBox;
+      "shared.advantages-box-v2": SharedAdvantagesBoxV2;
+      "shared.button": SharedButton;
+      "shared.call-to-action-items": SharedCallToActionItems;
+      "shared.characteristic": SharedCharacteristic;
+      "shared.content-raw": SharedContentRaw;
+      "shared.customers-block": SharedCustomersBlock;
+      "shared.gallary-item-with-link": SharedGallaryItemWithLink;
+      "shared.included-box": SharedIncludedBox;
+      "shared.media": SharedMedia;
+      "shared.medium-button": SharedMediumButton;
+      "shared.quote": SharedQuote;
+      "shared.rich-text": SharedRichText;
+      "shared.seo": SharedSeo;
+      "shared.size": SharedSize;
+      "shared.slide-with-buttons": SharedSlideWithButtons;
+      "shared.slider": SharedSlider;
+      "shared.social-link": SharedSocialLink;
     }
   }
 }
